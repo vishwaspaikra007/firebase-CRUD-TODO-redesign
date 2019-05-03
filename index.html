@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#000000">
+    <link rel="icon" href="./favicon.ico" type="image/ico">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/loginDetail.css">
+    <link rel="stylesheet" href="./css/loginDetailsMobile.css">
+    <title>TODO</title>
+</head>
+<body>
+    <div class="loginDetails">
+        <div class="displayName"></div>
+        <div class="formBox">
+            <input id="txtemail" type="email" name="email" placeholder="email">   
+            <input id="txtpassword" type="password" name="password"  placeholder="password"> 
+            <button type="submit" id="loginGoogle">
+                <img src="./img/google.svg" alt="G">
+            </button>  
+            <button id="btnlogin" type="submit" name="login">Login</button>
+            <button id="btnsignup" type="submit" name="signup">Sign up</button> 
+            <button id="btnlogout" type="submit" name="logout">Log out</button>  
+        </div>
+    </div>
+    <h1>TODO APPLICATION</h1>
+    <div class="container">
+        <div class="box"></div>
+        <div class="inut">
+            <form>
+            <input type="text" placeholder="Enter a todo" id="todo" >
+            <button onclick="add()"></button>
+            </form>
+        </div><br>
+        <div id="res"></div>
+    </div>
+<!--script for firbase storage-->
+<script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+<script src="./firebaseConfig.js"></script>
+<script src="./scripts/CRUDlS.js"></script>
+<script src="./scripts/firebase.js"></script>
+<script src="./scripts/newdatabase.js"></script>
+<script src="./scripts/loginDetails.js"></script>
+</body>
+</html>

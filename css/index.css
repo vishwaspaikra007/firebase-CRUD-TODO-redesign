@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css?family=Eczar');
+body,h1, .container, .resBox, .upDel, #rus, .inut, .box, #todo, p {
+    box-sizing: border-box;
+}
+body > h1 {
+    text-align: center;
+    color: #4aa7ad;
+    font-family: 'Eczar', serif;
+    letter-spacing: 2.5px;
+}
+.container {
+    margin: auto;
+    width: 580px;
+}
+.resBox {
+    min-height: 50px;
+    padding: 7px;
+    margin: 7px;
+    box-shadow: 0 9px 15px -12.7px black;
+    border-collapse: collapse;
+    display: grid;
+    grid-template-rows: auto auto;
+    border-radius: 20px;
+    background: white;
+}
+.resBox > p, .upDel  {
+    width: 100%;
+    /* height: 20px; */
+    padding: 10px 10px;
+    margin: auto;
+    display: inline-block;
+    overflow: overlay;
+    text-overflow: ellipsis;
+}
+.upDel  {
+    width: 100%;
+    height: auto;
+    direction: rtl;
+}
+.upDel button {
+    background: blue;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    width: 60px;
+    height: 28px;
+}
+.upDel #del {
+    background: red;
+}
+#res {
+    width: 80%;
+    margin: auto;
+}
+.inut {
+    width: 80%;
+    margin: auto;
+    display: block;
+    height: 38px;
+    position: sticky;
+    top: 10px;
+    background: white;
+}
+.box {
+    width: 100%;
+    height: 11px;
+    background: white;
+    position: sticky;
+    top: 0px;
+}
+.inut form button {
+    display: none;
+}
+#todo {
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 13px 17px -15px blue;
+    height: 40px;
+    width: 100%;
+    text-indent: 20px;
+    font-size: 20px;
+    font-weight: 500;
+} #index {
+    grid-column: 1 /span 3;
+}
+@media only screen and (max-width:800px) {
+    .container {
+        width:100%;
+    }
+    .upDel {
+        width: 100%;
+    }
+    #res {
+        width: 100%;
+    }
+    .inut {
+        width: 100%;
+    }
+}
