@@ -4,7 +4,7 @@ function mapping () {
     var box = document.getElementById('res');
     box.innerHTML = "";
     todos.map((todo,i) => {
-    box.innerHTML +=  `<div class='resBox'><p id="todoData" contenteditable="true"> ${todo}</p>
+    box.innerHTML +=  `<div class='resBox'><p id="todoData${i}" contenteditable="true"> ${todo}</p>
         <div class="upDel">
         <button onclick=upd(${i}) >update</button>
         <button onclick=del(${i}) id="del">delete</button>
@@ -17,7 +17,7 @@ function mapping () {
     }
 }
 function add(){
-    const todo = document.getElementById('todo').value + "<br>" + Date();
+    const todo = document.getElementById('todo').value;
     todos.push(todo);
     timeLocal = Date.now();
     fillStorage();
@@ -28,10 +28,10 @@ function del(i) {
     fillStorage();
 }
 function upd(i) {
-    let updvalue = prompt("Update",todos[i]);
+    let updvalue = document.querySelector('#todoData' + i)
     if(updvalue) {
         timeLocal = Date.now();
-        todos[i] = updvalue + '<br>' + Date();
+        todos[i] = updvalue.textContent;
     }
     fillStorage();
 }
