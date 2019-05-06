@@ -14,7 +14,8 @@ body > h1 {
 }
 .resBox {
     min-height: 50px;
-    padding: 7px;
+    padding: 7px 7px 0 7px;
+    overflow: hidden;
     margin: 7px;
     box-shadow: 0 9px 15px -12.7px black;
     border-collapse: collapse;
@@ -47,6 +48,14 @@ body > h1 {
 }
 .upDel #del {
     background: red;
+} .upDel #edit {
+    background: #23bd23;
+} .edit {
+    background: #23bd23;
+    width: 100%;
+    height: 0px;
+    transition: 500ms;
+    overflow: hidden;
 }
 #res {
     width: 80%;

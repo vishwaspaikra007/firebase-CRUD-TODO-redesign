@@ -1,0 +1,11 @@
+.box,.second  {
+    box-sizing: border-box;
+} .box {
+    height: 100%;
+    width: 0%;
+    margin-left: -7px;
+    background: orangered;
+} .second {
+    background: rgba(35, 189, 35,0.2);
+    height: 5px;
+}

@@ -20,7 +20,9 @@ function firestorage(x) {
             } else if(!dat) {
                 data.set({
                     time : Date.now(),
-                    todo : ['start Adding something']
+                    todo : [{data: "start Adding something",
+                            date: Date(),
+                            deadline: Date()}]
                 });
                 fillStorage();
             } else {
