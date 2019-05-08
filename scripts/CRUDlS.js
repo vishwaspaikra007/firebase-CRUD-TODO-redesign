@@ -23,6 +23,7 @@ function mapping () {
                 <div id="box${i}" class="box"></div>
             </div>
         </div>`;
+        timer(i);
     });
     var currentUser = firebase.auth().currentUser;
     if(currentUser) {

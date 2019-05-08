@@ -1,4 +1,4 @@
-var time,timeEnd,run = true;
+var time=[],timeEnd=[],i=[],run=[true];
 // var timeTaker =  document.querySelector('#deadline');
 // var barWidth = document.querySelector('.box');
 function decide(index) {
@@ -11,7 +11,7 @@ function decide(index) {
         alert("this deadline is not possible");
         return 0;
     }
-    else if(run == true) {
+    else if(run[index] == true) {
         // for fillStorage function of CRUD
         todos[index].deadline = new Date(timeTaker.value);
         console.log(new Date(timeTaker.value));
@@ -31,23 +31,24 @@ function decide(index) {
 }
 function stop(index) {
     clearInterval(timeEnd[index]);
-    run = true;
+    run[index] = true;
     timer(index);
 }
 function timer(index) { 
-let i = (Date.now() - new Date(todos[index].date).getTime())*10; 
-console.log(i);
+i[index] = (Date.now() - new Date(todos[index].date).getTime())/10; 
+console.log(i[index]);
 // var timeTaker =  document.querySelector('#deadline' + index);
-var barWidth = document.querySelector('#box' + index);
+var barWidth =[]; 
+barWidth[index] = document.querySelector('#box' + index);
 console.log(time);
-run =  false;
-time = (new Date(todos[index].deadline).getTime() - new Date(todos[index].date).getTime())/10; 
+run[index] =  false;
+time[index] = (new Date(todos[index].deadline).getTime() - new Date(todos[index].date).getTime())/10; 
 timeEnd[index] = setInterval(() => {
         // console.log(i + " " + time);
-        barWidth.style.width = "calc(" + (i/time)*100 + "% + 14px)";
-        if(i++ >= time) {
-        clearInterval(timeEnd);
-        i=0;
+        barWidth[index].style.width = "calc(" + (i[index]/time[index])*100 + "% + 14px)";
+        if(i[index]++ >= time[index]) {
+        clearInterval(timeEnd[index]);
+        i[index]=0;
         }
     }, 10);  
 }
