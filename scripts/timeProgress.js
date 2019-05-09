@@ -1,4 +1,4 @@
-var time=[],timeEnd=[],i=[],run=[true];
+var time=[],timeEnd=[],i=[],run=[true],barWidth =[];;
 // var timeTaker =  document.querySelector('#deadline');
 // var barWidth = document.querySelector('.box');
 function decide(index) {
@@ -34,21 +34,38 @@ function stop(index) {
     run[index] = true;
     timer(index);
 }
-function timer(index) { 
-i[index] = (Date.now() - new Date(todos[index].date).getTime())/10; 
-console.log(i[index]);
-// var timeTaker =  document.querySelector('#deadline' + index);
-var barWidth =[]; 
-barWidth[index] = document.querySelector('#box' + index);
-console.log(time);
-run[index] =  false;
-time[index] = (new Date(todos[index].deadline).getTime() - new Date(todos[index].date).getTime())/10; 
-timeEnd[index] = setInterval(() => {
-        // console.log(i + " " + time);
-        barWidth[index].style.width = "calc(" + (i[index]/time[index])*100 + "% + 14px)";
-        if(i[index]++ >= time[index]) {
-        clearInterval(timeEnd[index]);
-        i[index]=0;
+// function timer(index) { 
+//     alert("hello");
+// i[index] = (Date.now() - new Date(todos[index].date).getTime())/10; 
+// console.log(i[index]);
+// // var timeTaker =  document.querySelector('#deadline' + index); 
+// barWidth[index] = document.querySelector('#box' + index);
+// console.log(time);
+// run[index] =  false;
+// time[index] = (new Date(todos[index].deadline).getTime() - new Date(todos[index].date).getTime())/10; 
+// timeEnd[index] = setInterval(() => {
+//         // console.log(i + " " + time);
+//         barWidth[index].style.width = "calc(" + (i[index]/time[index])*100 + "% + 14px)";
+//         if(i[index]++ >= time[index]) {
+//         clearInterval(timeEnd[index]);
+//         i[index]=0;
+//         }
+//     }, 10);    
+// }
+
+function timer() { 
+console.log(time); 
+timeEnd = setInterval(() => {
+    for(x=0;x<todos.length;x++) {
+        if(new Date(todos[x].deadline).getTime() == new Date(todos[x].date).getTime())
+            continue;
+        if(i[x]++ >= time[x]) {
+            continue;
         }
-    }, 10);  
+        i[x] = (Date.now() - new Date(todos[x].date).getTime())/10;
+        barWidth[x] = document.querySelector('#box' + x);
+        time[x] = (new Date(todos[x].deadline).getTime() - new Date(todos[x].date).getTime())/10;
+        barWidth[x].style.width = "calc(" + (i[x]/time[x])*100 + "% + 14px)";         
+        }
+    }, 10);    
 }
