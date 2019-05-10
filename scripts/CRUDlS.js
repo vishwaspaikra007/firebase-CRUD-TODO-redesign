@@ -14,10 +14,10 @@ function mapping () {
             </div>
             <div id="edit${i}" class="edit">
                 <label>
-                    <span>Enter Deadline</span>
+                    <div><div>Enter Deadline</div></div>
                     <input type="datetime-local" name="deadline" id="deadline${i}">
-                    <button onclick="decide(${i})">start</button>
                 </label>
+                <button onclick="decide(${i})">start</button>
             </div>
             <div id="second${i}" class="second">
                 <div id="box${i}" class="box"></div>

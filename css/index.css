@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Eczar');
-body,h1, .container, .resBox, .upDel, #rus, .inut, .box, #todo, p {
+body,h1, .container, .resBox, .upDel, #rus, .inut, .box, #todo, p, input, .edit {
     box-sizing: border-box;
+} body {
+    margin: 0px;
 }
 body > h1 {
     text-align: center;
@@ -51,11 +53,42 @@ body > h1 {
 } .upDel #edit {
     background: #23bd23;
 } .edit {
-    background: #23bd23;
+    background: #ffffff;
     width: 100%;
     height: 0px;
     transition: 500ms;
     overflow: hidden;
+    display: grid;
+    grid-template-columns: 80% auto;
+} input[type="datetime-local" i] {
+    width: 80%;
+    border-radius: 25px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-left: 10%;
+    border: 2px dashed blue;
+    border-right: 2px solid blue;
+    background: navajowhite;
+} .edit label > div {
+    left: 15%;
+    background: navajowhite;
+    height: 10px;
+    top: 30px;
+    padding: 0 5px;
+    position: relative;
+    transform: rotate(180deg);
+    width: fit-content;
+} .edit label > div > div {
+    transform: rotate(180deg);
+} .edit > button {
+    width: 52px;
+    height: 52px;
+    border: 2px dashed blue;
+    z-index: 0;
+    position: relative;
+    border-radius: 50%;
+    background: orange;
+    top: calc(50% - 26px);
 }
 #res {
     width: 80%;

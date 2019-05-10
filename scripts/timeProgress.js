@@ -34,25 +34,6 @@ function stop(index) {
     run[index] = true;
     timer(index);
 }
-// function timer(index) { 
-//     alert("hello");
-// i[index] = (Date.now() - new Date(todos[index].date).getTime())/10; 
-// console.log(i[index]);
-// // var timeTaker =  document.querySelector('#deadline' + index); 
-// barWidth[index] = document.querySelector('#box' + index);
-// console.log(time);
-// run[index] =  false;
-// time[index] = (new Date(todos[index].deadline).getTime() - new Date(todos[index].date).getTime())/10; 
-// timeEnd[index] = setInterval(() => {
-//         // console.log(i + " " + time);
-//         barWidth[index].style.width = "calc(" + (i[index]/time[index])*100 + "% + 14px)";
-//         if(i[index]++ >= time[index]) {
-//         clearInterval(timeEnd[index]);
-//         i[index]=0;
-//         }
-//     }, 10);    
-// }
-
 function timer() { 
 console.log(time); 
 timeEnd = setInterval(() => {
