@@ -38,7 +38,8 @@ timeEnd = setInterval(() => {
         time[x] = (new Date(todos[x].deadline).getTime() - new Date(todos[x].date).getTime())/10;
         if(new Date(todos[x].deadline).getTime() == new Date(todos[x].date).getTime())
             continue;
-        if(i[x] >= time[x]) {
+        else if(i[x] >= time[x]) {
+            barWidth[x].style.width = "100%"
             continue;
         }
         barWidth[x].style.width = "calc(" + (i[x]/time[x])*100 + "% + 14px)";   
