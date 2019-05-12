@@ -32,15 +32,12 @@ function mapping () {
     }
 }
 // Edit section
-var toggleEdit = true
 function edit(i) {
     var editBox = document.querySelector('#edit' + i);
-    if(toggleEdit == true) {
+    if(editBox.style.height == "0px" || editBox.style.height == 0) {
         editBox.style.height = "100px";
-        toggleEdit = false;
     } else {
         editBox.style.height = "0px";
-        toggleEdit = true;
     }
 }
 

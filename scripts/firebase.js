@@ -23,7 +23,10 @@ function firestorage(x) {
                     todo : [{data: "start Adding something",
                             date: Date(),
                             deadline: Date()}]
-                });
+                })
+                .then(data => {
+                    todos = data.todo;
+                })
                 fillStorage();
             } else {
                 

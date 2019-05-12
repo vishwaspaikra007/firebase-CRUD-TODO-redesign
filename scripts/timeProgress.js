@@ -1,52 +1,52 @@
-var time=[],timeEnd=[],i=[],run=[true],barWidth =[];;
-// var timeTaker =  document.querySelector('#deadline');
-// var barWidth = document.querySelector('.box');
+var time=[],timeEnd=[],i=[],run=[true],barWidth =[],notified;
 function decide(index) {
     var timeTaker =  document.querySelector('#deadline' + index);
-    var barWidth = document.querySelector('#box' + index);
-    // barWidth.style.width = (i/time)*100 + "%";
-    // time = new Date(timeTaker.value).getTime() - new Date(todos[index].date).getTime();
     if (new Date(timeTaker.value).getTime() < Date.now()) {
-        // console.log(new Date(timeTaker.value).getTime() - new Date(todos[i].date).getTime());
         alert("this deadline is not possible");
         return 0;
     }
     else if(run[index] == true) {
-        // for fillStorage function of CRUD
-        todos[index].deadline = new Date(timeTaker.value);
-        console.log(new Date(timeTaker.value));
-        timeLocal = Date.now();
-        fillStorage(uid);
-        // fillStorage calling done
+        fillLocal(index);        
         timer(index);
     } else {
-        // for fillStorage function of CRUD
-        todos[index].deadline = new Date(timeTaker.value);
-        console.log(new Date(timeTaker.value));
-        timeLocal = Date.now();
-        fillStorage(uid);
-        // fillStorage calling done
+        fillLocal(index);
         stop(index);
     }
+}
+function fillLocal(index) {
+    var timeTaker =  document.querySelector('#deadline' + index);
+    // for fillStorage function of CRUD
+    todos[index].deadline = new Date(timeTaker.value);
+    console.log(new Date(timeTaker.value));
+    timeLocal = Date.now();
+    fillStorage(uid);
+    // fillStorage calling done
 }
 function stop(index) {
     clearInterval(timeEnd[index]);
     run[index] = true;
     timer(index);
 }
+// timer is called after refresh
 function timer() { 
+notified = new Array(todos.length).fill(0);
 console.log(time); 
 timeEnd = setInterval(() => {
     for(x=0;x<todos.length;x++) {
-        if(new Date(todos[x].deadline).getTime() == new Date(todos[x].date).getTime())
-            continue;
-        if(i[x]++ >= time[x]) {
-            continue;
-        }
         i[x] = (Date.now() - new Date(todos[x].date).getTime())/10;
         barWidth[x] = document.querySelector('#box' + x);
         time[x] = (new Date(todos[x].deadline).getTime() - new Date(todos[x].date).getTime())/10;
-        barWidth[x].style.width = "calc(" + (i[x]/time[x])*100 + "% + 14px)";         
+        if(new Date(todos[x].deadline).getTime() == new Date(todos[x].date).getTime())
+            continue;
+        if(i[x] >= time[x]) {
+            continue;
         }
+        barWidth[x].style.width = "calc(" + (i[x]/time[x])*100 + "% + 14px)";   
+        if(barWidth[x].style.width.slice(5,12) >= 50 && notified[x] === 0) {
+            notify50(x); 
+            notified[x] = 1;
+        }     
+        }
+
     }, 10);    
 }
