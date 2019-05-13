@@ -35,11 +35,11 @@ timeEnd = setInterval(() => {
     for(x=0;x<todos.length;x++) {
         i[x] = (Date.now() - new Date(todos[x].date).getTime())/10;
         barWidth[x] = document.querySelector('#box' + x);
-        time[x] = (new Date(todos[x].deadline).getTime() - new Date(todos[x].date).getTime())/10;
+        time[x] = (new Date((todos[x].deadline) | new Date(todos[x].deadline.seconds)*1000 ).getTime() - new Date(todos[x].date).getTime())/10;
         if(new Date(todos[x].deadline).getTime() == new Date(todos[x].date).getTime())
             continue;
         else if(i[x] >= time[x]) {
-            barWidth[x].style.width = "100%"
+            barWidth[x].style.width = "calc(100% + 14px)";
             continue;
         }
         barWidth[x].style.width = "calc(" + (i[x]/time[x])*100 + "% + 14px)";   
