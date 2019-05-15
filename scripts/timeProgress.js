@@ -27,6 +27,22 @@ function stop(index) {
     run[index] = true;
     timer(index);
 }
+// to set the date input
+function setDateInput(x) {
+    var set = document.querySelector('#deadline' + x);
+    var dline = new Date(todos[x].deadline);
+    var years = dline.getFullYear();
+    var months = dline.getMonth() + 1;  
+    months = (months <10 ? "0" : "") + months;  
+    var days = dline.getDate();
+    days = (days <10 ? "0" : "") + days;  
+    var hours = dline.getHours();
+    hours = (hours <10 ? "0" : "") + hours;  
+    var minutes = dline.getMinutes();
+    minutes = (minutes <10 ? "0" : "") + minutes;  
+    set.value = years + "-" + months + "-" + days + "T" + hours + ":" + minutes;
+    return set;
+}
 // timer is called after refresh
 function timer() { 
 notified = new Array(todos.length).fill(0);

@@ -10,12 +10,12 @@ function mapping () {
             <div class="upDel">
                 <button onclick=upd(${i}) >update</button>
                 <button onclick=del(${i}) id="del">delete</button>
-                <button onclick=edit(${i}) id="edit">Edit</button>
+                <button onclick="edit(${i});setDateInput(${i})"" id="edit">Edit</button>
             </div>
             <div id="edit${i}" class="edit">
                 <label>
                     <div><div>Enter Deadline</div></div>
-                    <input type="datetime-local" name="deadline" id="deadline${i}">
+                    <input type="datetime-local" name="deadline" id="deadline${i}" >
                 </label>
                 <button onclick="decide(${i})">start</button>
             </div>
