@@ -13,6 +13,7 @@
     <title>TODO</title>
 </head>
 <body>
+    <!-- Login Section ---------------------------------->
     <div class="loginDetails">
         <div class="displayName"></div>
         <div class="formBox">
@@ -26,12 +27,18 @@
             <button id="btnlogout" type="submit" name="logout">Log out</button>  
         </div>
     </div>
+    <!-- ^ Login Section     ^^^^^^^^^^^^^^^^^^^^^^^^-->
     <h1>TODO APPLICATION</h1>
     <div class="container">
         <div class="inut">
             <div class="MenuEmptybox"></div>
-            <form>
-            <input type="text" placeholder="Enter a todo" id="todo" >
+            <label>
+            <form onclick="placeHolder('#placeHolderTodo')">
+            <div id="placeHolderTodo">
+                <div>Enter a todo</div>
+            </div>
+            <input type="text" id="todo" >
+            </label>
             <button onclick="add()"></button>
             </form>
         </div><br>
@@ -46,5 +53,6 @@
 <script src="./scripts/loginDetails.js"></script>
 <script src="./scripts/timeProgress.js"></script>
 <script src="./scripts/notification.js"></script>
+<script src="./scripts/design.js"></script>
 </body>
 </html>
