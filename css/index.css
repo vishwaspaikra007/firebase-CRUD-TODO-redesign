@@ -13,7 +13,6 @@ body,h1, .container, .resBox, .upDel, #rus, .inut, .box, #todo, p, input, .edit 
     font-size: 30px;
     width: fit-content;
     z-index: -1;
-    transition: 0.5s;
     background: linear-gradient(to left, #d5efcf ,#0000);
     border-radius: 10px 0;
     height: 8px;
