@@ -3,16 +3,18 @@ body,h1, .container, .resBox, .upDel, #rus, .inut, .box, #todo, p, input, .edit 
     box-sizing: border-box;
 } body {
     margin: 0px;
+} h1 {
+    margin: 0;
+    margin-top: 15px;
 } input:focus, textarea {
     outline: none !important;
 }#placeHolderTodo {
     position: absolute;
     left: 40px;
-    top: 33px;
+    top: 56px;
     color: #4aa7ad;
     font-size: 30px;
     width: fit-content;
-    z-index: -1;
     background: linear-gradient(to left, #d5efcf ,#0000);
     border-radius: 10px 0;
     height: 8px;
@@ -46,7 +48,6 @@ body > h1 {
 }
 .resBox > p, .upDel  {
     width: 100%;
-    /* height: 20px; */
     padding: 10px 10px;
     margin: auto;
     display: inline-block;
@@ -111,6 +112,7 @@ body > h1 {
 #res {
     width: 80%;
     margin: auto;
+    margin-top: 20px;
 }
 .inut {
     width: 80%;
@@ -124,7 +126,7 @@ body > h1 {
 }
 .MenuEmptybox {
     width: 100%;
-    height: 11px;
+    height: 30px;
     background: white;
     position: sticky;
     top: 0px;
@@ -142,7 +144,6 @@ body > h1 {
     text-indent: 20px;
     font-size: 20px;
     font-weight: 500;
-    background: transparent;
 } #index {
     grid-column: 1 /span 3;
 }
