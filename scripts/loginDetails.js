@@ -9,7 +9,8 @@
 
   // login with google
   btnLoginGoogle.addEventListener('click', e => {
-    alert("google login");
+     // loading animation
+     loading();
     var provider = new firebase.auth.GoogleAuthProvider();
 
     firebase.auth().signInWithRedirect(provider);
@@ -37,6 +38,8 @@
 
   // login event
   btnlogin.addEventListener('click', e => {
+    // loading animation
+    loading();
     //get email and pass
     const email = txtemail.value;
     const password = txtpassword.value;
@@ -78,6 +81,8 @@
           displayNameHTML.innerHTML = fireBaseUser.displayName;
           firestorage(fireBaseUser.uid);
         });
+        // loading animation for signUP
+        loading();
       }
       
       else {

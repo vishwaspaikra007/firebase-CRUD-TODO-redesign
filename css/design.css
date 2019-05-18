@@ -1,0 +1,25 @@
+.loading {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    font-size: 10vw;
+    text-align: center;
+    padding-top: 40vh;
+    z-index: 2;
+    background: #0000000e;
+    background:  linear-gradient(to left,indigo,rgb(37, 214, 37),yellow,orange,red);
+    background-size: 400% 400%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: none;
+    animation: load;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+@keyframes load {
+    0%{background-position: 0% 0%}
+    50%{background-position: bottom right}
+    100%{background-position: 0% 0%}
+}

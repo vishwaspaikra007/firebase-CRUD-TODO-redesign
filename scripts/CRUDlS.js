@@ -4,6 +4,8 @@ function mapping () {
     var box = document.getElementById('res');
     box.innerHTML = "";
     todos.map((todo,i) => {
+        if(endLoad)
+            endLoading();
     box.innerHTML +=  
         `<div class='resBox'>
             <p id="todoData${i}" contenteditable="true"> ${todo.data}</p>
