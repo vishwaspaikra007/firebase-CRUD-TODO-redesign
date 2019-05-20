@@ -1,11 +1,14 @@
 // notification permission ..................................................................
 if("Notification" in window) {
     if(Notification.permission !== "default") {
-        const title = "TODO Application";
-        const options = {
-            body: "Your app notification is working fine"
-        };
-        var n = new Notification(title, options);
+        // navigator.serviceWorker.getRegistration()
+        //     .then( reg => {
+        //         const options = {
+        //             body: "Your app notification is working fine",
+        //             icon: "../icon.png"
+        //         };
+        //         reg.showNotification("TODO NOtification",options)
+        //     })
     } else {
         Notification.requestPermission()
             .then(result => {
@@ -21,14 +24,15 @@ if("Notification" in window) {
 //  notify 50 ............................................................................
 var notify50 = (x) => {
     var dline = new Date(todos[x].deadline).getTime();
-    var now = new Date();
+    var now = new Date().getTime();
+    subVal = dline - now;
     // to show a user friendly time left
-    var years = ((dline - now)/3.154e+10).toFixed();
-    var months = ((dline - now)/2628336214).toFixed();    
-    var days = ((dline - now)/86410959).toFixed();
-    var hours = ((dline - now)/3600457).toFixed();
-    var minutes = ((dline - now)/60008).toFixed();
-    var seconds = ((dline - now)/1000).toFixed();
+    var years = ((subVal)/3.154e+10).toFixed();
+    var months = ((subVal)/2628336214).toFixed();    
+    var days = ((subVal)/86410959).toFixed();
+    var hours = ((subVal)/3600457).toFixed();
+    var minutes = ((subVal)/60008).toFixed();
+    var seconds = ((subVal)/1000).toFixed();
 
     var timeLeft = "";
     if(years > 0)
@@ -44,11 +48,17 @@ var notify50 = (x) => {
     if(seconds > 0)
         timeLeft += seconds + " sec ";
 
-    const title = "50% time remaining";
-    const options = {
-        body: "Dealine : " + new Date(todos[x].deadline) + 
-              " and timeleft :" + timeLeft
-    };
-    var n = new Notification(title, options);   
+    if(Notification.permission == "granted")
+    {
+        navigator.serviceWorker.getRegistration()
+            .then( reg => {
+                const options = {
+                    body: "Dealine : " + new Date(todos[x].deadline) + 
+                          " and timeleft :" + timeLeft,
+                    icon: "../icon.png"
+                };
+                reg.showNotification("50% time remaining",options)
+            })
+    }  
 }
 //..........................................................................................
