@@ -6,6 +6,7 @@
   const btnlogout = document.getElementById("btnlogout");
   const btnLoginGoogle = document.getElementById("loginGoogle");
   const displayNameHTML = document.querySelector(".displayName");
+  const displayNameMenu = document.querySelector(".name b");
 
   // login with google .......................................................................
   btnLoginGoogle.addEventListener('click', e => {
@@ -82,6 +83,7 @@
       }      
       else {
         displayNameHTML.innerHTML = `<span>${fireBaseUser.displayName}</span>`;
+        displayNameMenu.innerHTML = `<span>${fireBaseUser.displayName}</span>`;
         firestorage(fireBaseUser.uid);
       }  
       btnlogout.style.display = "inline-block";

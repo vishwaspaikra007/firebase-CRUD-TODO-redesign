@@ -11,40 +11,57 @@
     <link rel="stylesheet" href="./css/loginDetailsMobile.css">
     <link rel="stylesheet" href="./css/timeProgress.css">
     <link rel="stylesheet" href="./css/design.css">
+    <link rel="stylesheet" href="./css/swipeMenu.css">
     <title>TODO</title>
 </head>
 <body>
-    <!-- Login Section ---------------------------------->
-    <div class="loginDetails">
-        <div class="displayName"></div>
-        <div class="formBox">
-            <input id="txtemail" type="email" name="email" placeholder="email">   
-            <input id="txtpassword" type="password" name="password"  placeholder="password"> 
-            <button type="submit" id="loginGoogle">
-                <img src="./img/google.svg" alt="G">
-            </button>  
-            <button id="btnlogin" type="submit" name="login">Login</button>
-            <button id="btnsignup" type="submit" name="signup">Sign up</button> 
-            <button id="btnlogout" type="submit" name="logout">Log out</button>  
+<!--Swipe menu----------------------------------------------------------->
+<div class="mainContainer">
+    <div class="swipeContainer">
+        <div class="menu">
+            <div class="name"><b>Guest</b></div>
+            <div class="avatarContainer">
+                <div class="avatarImg">
+                    <img src="./img/dp.jpeg" alt="avatar">
+                </div>
+                <div class="avatarStatus">Currently no custom Avatar</div>
+            </div>
+        </div>
+        <div class="content" id="content">
+            <!-- Login Section ---------------------------------->
+            <div class="loginDetails">
+                <div class="displayName"></div>
+                <div class="formBox">
+                    <input id="txtemail" type="email" name="email" placeholder="email">   
+                    <input id="txtpassword" type="password" name="password"  placeholder="password"> 
+                    <button type="submit" id="loginGoogle">
+                        <img src="./img/google.svg" alt="G">
+                    </button>  
+                    <button id="btnlogin" type="submit" name="login">Login</button>
+                    <button id="btnsignup" type="submit" name="signup">Sign up</button> 
+                    <button id="btnlogout" type="submit" name="logout">Log out</button>  
+                </div>
+            </div>
+            <!-- ^ Login Section     ^^^^^^^^^^^^^^^^^^^^^^^^-->
+            <h1 id="todoHeading">TODO APPLICATION</h1>
+            <div class="container">
+                <div class="inut">
+                    <div class="MenuEmptybox"></div>
+                    <label>
+                    <form onclick="placeHolder('#placeHolderTodo')">
+                    <div id="placeHolderTodo">
+                        <div>Enter a todo</div>
+                    </div>
+                    <input type="text" id="todo" >
+                    </label>
+                    <button onclick="add()"></button>
+                    </form>
+                </div><br>
+                <div id="res"></div>
+            </div>
         </div>
     </div>
-    <!-- ^ Login Section     ^^^^^^^^^^^^^^^^^^^^^^^^-->
-    <h1>TODO APPLICATION</h1>
-    <div class="container">
-        <div class="inut">
-            <div class="MenuEmptybox"></div>
-            <label>
-            <form onclick="placeHolder('#placeHolderTodo')">
-            <div id="placeHolderTodo">
-                <div>Enter a todo</div>
-            </div>
-            <input type="text" id="todo" >
-            </label>
-            <button onclick="add()"></button>
-            </form>
-        </div><br>
-        <div id="res"></div>
-    </div>
+</div>
 <!-- Loading html-->
     <div class="loading"></div>
 
@@ -58,6 +75,7 @@
 <script src="./scripts/timeProgress.js"></script>
 <script src="./scripts/notification.js"></script>
 <script src="./scripts/design.js"></script>
+<script src="./scripts/swipeMenu.js"></script>
 <script src="./sw.js"></script>
 <script>
 //Service worker registration ....................................................................
