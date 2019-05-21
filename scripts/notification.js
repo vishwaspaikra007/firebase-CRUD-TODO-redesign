@@ -5,7 +5,7 @@ if("Notification" in window) {
         //     .then( reg => {
         //         const options = {
         //             body: "Your app notification is working fine",
-        //             icon: "../icon.png"
+        //             icon: "../firebase-CRUD-TODO-redesign/favicon.ico"
         //         };
         //         reg.showNotification("TODO NOtification",options)
         //     })
@@ -55,7 +55,7 @@ var notify50 = (x) => {
                 const options = {
                     body: "Dealine : " + new Date(todos[x].deadline) + 
                           " and timeleft :" + timeLeft,
-                    icon: "../icon.png"
+                    icon: "../firebase-CRUD-TODO-redesign/favicon.ico"
                 };
                 reg.showNotification("50% time remaining",options)
             })
