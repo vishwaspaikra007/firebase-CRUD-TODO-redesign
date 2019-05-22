@@ -39,7 +39,7 @@ body {
     max-width: 350px;           
 } .menu > img {
     width: 100%;
-} .name, .avatarContainer {
+} .name, .avatarContainer, .addToHomeScreen {
     width: 90%;
     margin: auto;
     margin-top: 10px;
@@ -49,4 +49,12 @@ body {
     text-transform: capitalize;
 } .avatarImg > img {
     width: 100%;
+} .addToHomeScreen {
+    direction: rtl;
+} .addToHomeScreen > button {
+    padding: 10px;
+    background: blue;
+    border: none;
+    border-radius: 10px;
+    color: white;
 }

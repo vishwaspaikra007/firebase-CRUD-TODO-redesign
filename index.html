@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./css/timeProgress.css">
     <link rel="stylesheet" href="./css/design.css">
     <link rel="stylesheet" href="./css/swipeMenu.css">
+    <link rel="manifest" href="./manifest.json">
     <title>TODO</title>
 </head>
 <body>
@@ -26,6 +27,7 @@
                 </div>
                 <div class="avatarStatus">Currently no custom Avatar</div>
             </div>
+            <div class="addToHomeScreen"><button onclick="">Add to Home Screen</button></div>
         </div>
         <div class="content" id="content">
             <!-- Login Section ---------------------------------->
@@ -90,6 +92,11 @@
         });
     });
     }
+window.addEventListener("beforeinstallprompt", ev => { 
+  //ev.preventDefault();
+  var button = document.querySelector(".addToHomeScreen button");
+  button.onclick = () => ev.prompt();
+});
 </script>
 </body>
 </html>
