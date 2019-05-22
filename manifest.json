@@ -13,7 +13,7 @@
       "type": "image/png"
     }
   ],
-  "start_url": "/?utm_source=homescreen",
+  "start_url": "/firebase-CRUD-TODO-redesign/?utm_source=homescreen",
   "background_color": "#fff",
   "theme_color": "#000",
   "display": "standalone"
