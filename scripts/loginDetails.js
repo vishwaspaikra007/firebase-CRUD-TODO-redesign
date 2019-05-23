@@ -28,6 +28,9 @@
       var email = error.email;
       // The firebase.auth.AuthCredential type that was used.
       var credential = error.credential;
+      alert("Can't log you in Reason:" + error.message);
+      if(endLoad)
+            endLoading();
       // ...
     });
   });
@@ -42,7 +45,12 @@
     const auth = firebase.auth();
     // sign in
     const promise = auth.signInWithEmailAndPassword(email, password);
-    promise.catch(e => console.log(e.message));
+    promise.catch(e => {
+      console.log(e.message);
+      alert("Can't log you in Reason:" + e.message);
+      if(endLoad)
+            endLoading();
+    });
   });
   //...........................................................................................
   //signup event...............................................................................
@@ -100,7 +108,7 @@
       btnLoginGoogle.style.display = "inline-block";
       txtpassword.style.display = "inline-block";
       txtemail.style.display = "inline-block";
-      displayNameHTML.innerHTML = ``;
+      displayNameHTML.innerHTML = `Guest`;
     }    
   });
 //..............................................................................................
