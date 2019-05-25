@@ -96,6 +96,8 @@
 window.addEventListener("beforeinstallprompt", ev => { 
   //ev.preventDefault();
   var button = document.querySelector(".addToHomeScreen button");
+  var buttonBox = document.querySelector(".addToHomeScreen");
+  buttonBox.style.display = 'block';
   button.onclick = () => ev.prompt();
 });
 </script>

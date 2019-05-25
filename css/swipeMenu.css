@@ -51,6 +51,7 @@ body {
     width: 100%;
 } .addToHomeScreen {
     direction: rtl;
+    display: none;
 } .addToHomeScreen > button {
     padding: 10px;
     background: blue;
