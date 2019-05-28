@@ -3,8 +3,7 @@ function firestorage(x) {
     const app = firebase.app();
     const db = firebase.firestore();
     const data = db.collection("todos").doc(x);
-    data.get() 
-        .then(doc => {
+    data.onSnapshot(doc => {
             const dat = doc.data();
             if(uid === x) {
             if(dat.time > timeLocal) {
