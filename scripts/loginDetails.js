@@ -88,7 +88,6 @@
       else {
         displayNameHTML.innerHTML = `<span>${fireBaseUser.displayName}</span>`;
         displayNameMenu.innerHTML = `<span>${fireBaseUser.displayName}</span>`;
-        alert('call for firestorage');
         firestorage(fireBaseUser.uid);
       }  
       btnlogout.style.display = "inline-block";
