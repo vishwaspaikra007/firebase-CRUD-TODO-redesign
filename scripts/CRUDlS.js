@@ -5,8 +5,8 @@ function mapping () {
     var box = document.getElementById('res');
     box.innerHTML = "";
     todos.map((todo,i) => {
-        if(endLoad)
-            endLoading();
+    if(endLoad)
+        endLoading();
     box.innerHTML +=  
         `<div class='resBox'>
             <p id="todoData${i}" contenteditable="true"> ${todo.data}</p>
@@ -72,7 +72,6 @@ function upd(i) {
 //...............................................................................................
 //fill local storage.............................................................................
 function fillStorage() {
-    // alert("storing");
     var local = {
         uid : uid,
         Time : timeLocal,

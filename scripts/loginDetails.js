@@ -68,10 +68,6 @@
 // function log out.............................................................................
   btnlogout.addEventListener('click', e => {
     firebase.auth().signOut();
-    uid = 0;
-    timeLocal = 0;
-    todos = [];
-    fillStorage();
   });
 //...............................................................................................
 // real time listener............................................................................
@@ -92,6 +88,7 @@
       else {
         displayNameHTML.innerHTML = `<span>${fireBaseUser.displayName}</span>`;
         displayNameMenu.innerHTML = `<span>${fireBaseUser.displayName}</span>`;
+        alert('call for firestorage');
         firestorage(fireBaseUser.uid);
       }  
       btnlogout.style.display = "inline-block";
@@ -109,6 +106,10 @@
       txtpassword.style.display = "inline-block";
       txtemail.style.display = "inline-block";
       displayNameHTML.innerHTML = `Guest`;
+      uid = 0;
+      timeLocal = 0;
+      todos = [];
+      fillStorage();
     }    
   });
 //..............................................................................................
