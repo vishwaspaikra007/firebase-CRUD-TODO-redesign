@@ -39,7 +39,7 @@ body,#todoHeading, .container, .resBox, .upDel, #rus, .inut, .box, #todo, p, inp
     padding: 7px 7px 0 7px;
     overflow: hidden;
     margin: 7px;
-    box-shadow: 0 9px 15px -12.7px black;
+    box-shadow: 0 9px 22px -9.7px black;
     border-collapse: collapse;
     display: grid;
     grid-template-rows: auto auto;
@@ -136,7 +136,7 @@ body,#todoHeading, .container, .resBox, .upDel, #rus, .inut, .box, #todo, p, inp
     display: none;
 }
 #todo {
-    border-radius: 20px;
+    border-radius: 0 0 20px 20px;
     border: none;
     box-shadow: 0 13px 17px -15px blue;
     height: 40px;
